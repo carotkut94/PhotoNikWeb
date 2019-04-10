@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 // Mongoose model with scheme
 const Photo = require("../../models/photos");
 
-const MONGO_URL = "mongodb://localhost:27017/demo";
+const MONGO_URL = "mongodb://admin:dell1234@ds237196.mlab.com:37196/heroku_mkqfk6tb";
 mongoose.connect(MONGO_URL, {useNewUrlParser: true})
     .then(resolved =>
         console.log("Database connected")
