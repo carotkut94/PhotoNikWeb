@@ -28,6 +28,6 @@ const upload = multer({storage, fileFilter: filter});
 route.get("/", photoController.getAllPhotos);
 
 
-route.put("/", upload.single('imageUrl'), photoController.addPhoto);
+route.put("/", upload.single('imageFile'), photoController.addPhoto);
 
 module.exports = route;
