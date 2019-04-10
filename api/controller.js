@@ -9,8 +9,7 @@ exports.getAllPhotos = async (req, res)=>{
 };
 
 exports.addPhoto = async (req, res)=>{
-    if(req.file.path!==undefined) {
-        const photo = await Helper.addPhoto(req.body.name, req.body.description, req.file.path)
+     const photo = await Helper.addPhoto(req.body.name, req.body.description, req.body.imageUrl);
         if (photo === "Inserted") {
             res.status(200)
                 .json({
@@ -24,11 +23,4 @@ exports.addPhoto = async (req, res)=>{
                     message: "All fields are required"
                 })
         }
-    }else{
-        res.status(401)
-            .json({
-                status: 401,
-                message: "file is required"
-            })
-    }
 };
